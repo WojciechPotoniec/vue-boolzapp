@@ -1,0 +1,22 @@
+.wp-debug{
+    border: 1px solid red;   
+}
+#app{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, #009688 18%, #D8DBD5 18%);
+}
+#contactList{
+    width: 40%;
+}
+#chatWrapper{
+    width: 60%;
+}
+.toolbar{
+    height: 60px;
+    background-color: #EAEAEA;
+}
+.chat{
+    height: calc(100% - 120px);
+    background-image: url('../img/mine.jpg');
+}
