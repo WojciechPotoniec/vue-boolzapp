@@ -16,6 +16,10 @@
     height: 60px;
     background-color: #EAEAEA;
 }
+.notification{
+    height: 70px;
+    background-color: #8EDAFC;
+}
 .chat{
     height: calc(100% - 120px);
     background-image: url('../img/mine.jpg');
