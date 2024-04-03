@@ -49,10 +49,11 @@ main {
   background-color: white;
   overflow-y: auto;
 }
-/* .contact{   } */
-.active:hover {
-  background-color: grey;
-  cursor: pointer;
+.contact{
+    cursor: pointer;
+}
+.active {
+  background-color: lightgrey;
 }
 .avatar {
   width: 40px;
