@@ -56,9 +56,9 @@
             />
           </div>
           <div class="contacts">
-            <div class="contact p-3 d-flex align-content-start" :class="{'active': activeContact === contact.id}" v-for="(contact, index) in contacts" :key="contact.id">
+            <div class="contact p-3 d-flex align-content-start" :class="{'active': activeContactId === contact.id}"  v-for="(contact, index) in contacts" :key="contact.id" @click="activeContactId = contact.id">
               <div class="avatar">
-                <img :src="contact.avatar" :alt="contact.name" />
+                <img :src="contact.avatar" :alt="contact.name"/>
               </div>
               <div>
                 <h6>{{contact.name}}</h6>
