@@ -12,15 +12,21 @@
 #chatWrapper{
     width: 60%;
 }
-.toolbar{
-    height: 60px;
-    background-color: #EAEAEA;
-}
 .notification{
     height: 70px;
     background-color: #8EDAFC;
 }
+.searchbar{
+    height: 20px;
+    padding: 5px;
+    border-radius: 0px;
+}
 .chat{
     height: calc(100% - 120px);
+    overflow-y: auto;
     background-image: url('../img/mine.jpg');
 }
+.toolbar{
+    height: 60px;
+        background-color: #EAEAEA;
+    }
