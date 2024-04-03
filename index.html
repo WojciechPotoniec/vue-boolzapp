@@ -20,21 +20,41 @@
 </head>
 <body>
     <div id="app" class="py-3">
-        <main class="container d-flex p-0 wp-debug">
-            <div id="contactList" class="wp-debug">
-                <div class="toolbar wp-debug">
+        <main class="container d-flex p-0">
+            <div id="contactList">
+                <div class="toolbar">
                     toolbar
                 </div>
                 <div class="notification"></div>
+                <div class="input-group mb-3 searchbar">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div class="contacts">
+                    <div class="contact d-flex">
+                        <div class="avatar">
+                            <img src="img/avatar_1.jpg" alt="Michele">
+                        </div>
+                        <div>
+                            <h6>Michele</h6>
+                            <span>Ultimo messaggio inviato</span>
+                        </div>
+                        <span class="time">
+                            15:30
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div id="chatWrapper" class="wp-debug">
-                <div class="toolbar wp-debug">
+            <div id="chatWrapper" class="">
+                <div class="toolbar ">
                     toolbar
                 </div>
                 <div class="chat">
                     chat
                 </div>
-                <div class="toolbar wp-debug">
+                <div class="toolbar ">
                     toolbar
                 </div>
             </div>
