@@ -70,6 +70,20 @@ main {
   overflow-y: auto;
   background-image: url("../img/mine.jpg");
 }
+.msg{
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 10px;
+}
+.sent{
+  background-color: #D5F9BA;
+  margin-left: auto;
+}
+.received{
+  background-color: white;
+}
+
 .toolbar {
   height: 60px;
   background-color: #eaeaea;
