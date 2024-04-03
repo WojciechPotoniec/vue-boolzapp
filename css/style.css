@@ -18,8 +18,20 @@
 }
 .searchbar{
     height: 20px;
-    padding: 5px;
-    border-radius: 0px;
+    /* padding: 5px; */
+}
+.contacts{
+    height: calc(100% - 90px);
+}
+.contact{
+    
+}
+.avatar{
+    width: 40px;
+}
+.avatar img{
+    width: 100%;
+    border-radius: 50%;
 }
 .chat{
     height: calc(100% - 120px);
