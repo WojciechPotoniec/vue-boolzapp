@@ -76,11 +76,16 @@
         </div>
         <div id="chatWrapper">
           <div class="toolbar">
-            <div class="avatar d-flex">
+            <div class="avatar d-flex align-items-center ">
               <img :src="activeContact.avatar" :alt="activeContact.name"/>
-              <strong class="ms-2">{{activeContact.name}}</strong>
-              <small>Ultimo accesso</small>
+              <div>
+                <h6 class="ms-2">{{activeContact.name}}</h6>
+                <small>Ultimo accesso</small>
+              </div>  
             </div>
+
+
+
             <div>
               <i class="icon fa-solid fa-magnifying-glass"></i>
               <i class="icon fa-solid fa-paperclip"></i>
