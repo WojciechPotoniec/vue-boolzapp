@@ -56,9 +56,15 @@
             />
           </div>
           <div class="contacts">
-            <div class="contact p-3 d-flex align-content-start" :class="{'active': activeContactId === contact.id}"  v-for="(contact, index) in contacts" :key="contact.id" @click="activeContactId = contact.id">
+            <div
+              class="contact p-3 d-flex align-content-start"
+              :class="{'active': activeContactId === contact.id}"
+              v-for="(contact, index) in contacts"
+              :key="contact.id"
+              @click="activeContactId = contact.id"
+            >
               <div class="avatar">
-                <img :src="contact.avatar" :alt="contact.name"/>
+                <img :src="contact.avatar" :alt="contact.name" />
               </div>
               <div>
                 <h6>{{contact.name}}</h6>
@@ -70,12 +76,10 @@
         </div>
         <div id="chatWrapper">
           <div class="toolbar">
-            <div class="avatar">
-              <img src="img/avatar_1.jpg" alt="Me" />
-              <div class="d-flex flex-column">
-                <strong class="ms-2">Michele</strong>
-                <small>Ultimo accesso</small>
-              </div>
+            <div class="avatar d-flex">
+              <img :src="activeContact.avatar" :alt="activeContact.name"/>
+              <strong class="ms-2">{{activeContact.name}}</strong>
+              <small>Ultimo accesso</small>
             </div>
             <div>
               <i class="icon fa-solid fa-magnifying-glass"></i>
@@ -83,7 +87,13 @@
               <i class="icon fa-solid fa-ellipsis-vertical"></i>
             </div>
           </div>
-          <div class="chat"></div>
+          <div class="chat">
+            <div class="p-2" v-for="(msg, index) in activeContact.messages">
+              <div class="msg" :class="msg.status">
+                {{msg.message}}
+              </div>
+            </div>
+          </div>
           <div class="toolbar d-flex align-items-center">
             <i class="icon fa-regular fa-face-smile px-3"></i>
             <div class="input-group mb-3 searchbar">
