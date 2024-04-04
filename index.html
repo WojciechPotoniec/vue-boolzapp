@@ -14,6 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="module" src="js/script.js"></script>
     <title>Vue Boolzapp</title>
@@ -42,7 +43,7 @@
             </div>
             <div>
               <div>Ricevi notifiche di nuovi messaggi</div>
-              <span>Attiva notifiche desktop</span>
+              <a href="#">Attiva notifiche desktop</a>
             </div>
           </div>
           <div class="input-group mb-3 searchbar">
@@ -52,23 +53,26 @@
             <input
               type="text"
               class="form-control"
-              placeholder="Cerca o inizia una nuova chat"
+              placeholder="Cerca o inizia una nuova chat" v-model="searchText"
             />
           </div>
           <div class="contacts">
+            <div class="alert alert-danger m-3 text-center" v-if="filteredContacts.length < 1">
+              <strong>Non ci sono elementi per la tua ricerca</strong>
+            </div>
             <div
-              class="contact p-3 d-flex align-content-start"
+              class="contact p-2 d-flex align-content-start"
               :class="{'active': activeContactId === contact.id}"
-              v-for="(contact, index) in contacts"
+              v-for="(contact, index) in filteredContacts"
               :key="contact.id"
               @click="activeContactId = contact.id"
             >
               <div class="avatar">
                 <img :src="contact.avatar" :alt="contact.name" />
               </div>
-              <div>
+              <div class="ms-3 ">
                 <h6>{{contact.name}}</h6>
-                <span>Ultimo messaggio</span>
+                <small>Ultimo messaggio</small>
               </div>
               <small class="time ms-auto"> 15:30 </small>
             </div>
@@ -76,16 +80,15 @@
         </div>
         <div id="chatWrapper">
           <div class="toolbar">
-            <div class="avatar d-flex align-items-center ">
-              <img :src="activeContact.avatar" :alt="activeContact.name"/>
-              <div>
-                <h6 class="ms-2">{{activeContact.name}}</h6>
+            <div class="d-flex">
+              <div class="avatar d-flex align-items-center ">
+                <img :src="activeContact.avatar" :alt="activeContact.name"/>
+              </div>
+              <div class="ms-3">
+                <h6>{{activeContact.name}}</h6>
                 <small>Ultimo accesso</small>
               </div>  
             </div>
-
-
-
             <div>
               <i class="icon fa-solid fa-magnifying-glass"></i>
               <i class="icon fa-solid fa-paperclip"></i>
@@ -95,7 +98,8 @@
           <div class="chat">
             <div class="p-2" v-for="(msg, index) in activeContact.messages">
               <div class="msg" :class="msg.status">
-                {{msg.message}}
+                <div>{{msg.message}}</div>
+                <small>{{msg.date}}</small>
               </div>
             </div>
           </div>
@@ -105,8 +109,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Scrivi un messaggio"
-              />
+                placeholder="Scrivi un messaggio" v-model="msgText" @keyup.enter="addMessage"/>
             </div>
             <i class="icon fa-solid fa-microphone px-3"></i>
           </div>
