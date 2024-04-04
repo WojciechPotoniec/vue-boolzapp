@@ -48,15 +48,17 @@ main {
   height: calc(100% - 166px);
   background-color: white;
   overflow-y: auto;
+  /* border-bottom: 1px solid rgb(168, 168, 168); */
 }
-.contact{
-    cursor: pointer;
+.contact:hover{
+  background-color: rgb(202, 202, 202);
+  cursor: pointer;
 }
 .active {
   background-color: lightgrey;
 }
 .avatar {
-  width: 40px;
+  width: 50px;
 }
 .avatar img {
   width: 100%;
@@ -82,6 +84,7 @@ main {
 }
 .received{
   background-color: white;
+  margin-right: auto;
 }
 
 .toolbar {
