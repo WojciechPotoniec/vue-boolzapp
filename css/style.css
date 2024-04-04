@@ -7,12 +7,12 @@
   background: linear-gradient(180deg, #009688 12%, #d8dbd5 12%);
 }
 main {
-    height: 100%;
+  height: 100%;
 }
 #contactList {
   width: 40%;
 }
-.icon{
+.icon {
   font-size: 1.4rem;
   color: #b1b1b1;
   margin-right: 10px;
@@ -50,7 +50,7 @@ main {
   overflow-y: auto;
   /* border-bottom: 1px solid rgb(168, 168, 168); */
 }
-.contact:hover{
+.contact:hover {
   background-color: rgb(202, 202, 202);
   cursor: pointer;
 }
@@ -72,17 +72,17 @@ main {
   overflow-y: auto;
   background-image: url("../img/mine.jpg");
 }
-.msg{
+.msg {
   width: 250px;
   border-radius: 10px;
   border: 1px solid grey;
   padding: 10px;
 }
-.sent{
-  background-color: #D5F9BA;
+.sent {
+  background-color: #d5f9ba;
   margin-left: auto;
 }
-.received{
+.received {
   background-color: white;
   margin-right: auto;
 }

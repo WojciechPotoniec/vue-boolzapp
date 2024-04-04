@@ -53,11 +53,15 @@
             <input
               type="text"
               class="form-control"
-              placeholder="Cerca o inizia una nuova chat" v-model="searchText"
+              placeholder="Cerca o inizia una nuova chat"
+              v-model="searchText"
             />
           </div>
           <div class="contacts">
-            <div class="alert alert-danger m-3 text-center" v-if="filteredContacts.length < 1">
+            <div
+              class="alert alert-danger m-3 text-center"
+              v-if="filteredContacts.length < 1"
+            >
               <strong>Non ci sono elementi per la tua ricerca</strong>
             </div>
             <div
@@ -70,7 +74,7 @@
               <div class="avatar">
                 <img :src="contact.avatar" :alt="contact.name" />
               </div>
-              <div class="ms-3 ">
+              <div class="ms-3">
                 <h6>{{contact.name}}</h6>
                 <small>Ultimo messaggio</small>
               </div>
@@ -81,13 +85,13 @@
         <div id="chatWrapper">
           <div class="toolbar">
             <div class="d-flex">
-              <div class="avatar d-flex align-items-center ">
-                <img :src="activeContact.avatar" :alt="activeContact.name"/>
+              <div class="avatar d-flex align-items-center">
+                <img :src="activeContact.avatar" :alt="activeContact.name" />
               </div>
               <div class="ms-3">
                 <h6>{{activeContact.name}}</h6>
                 <small>Ultimo accesso</small>
-              </div>  
+              </div>
             </div>
             <div>
               <i class="icon fa-solid fa-magnifying-glass"></i>
@@ -109,7 +113,10 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Scrivi un messaggio" v-model="msgText" @keyup.enter="addMessage"/>
+                placeholder="Scrivi un messaggio"
+                v-model="msgText"
+                @keyup.enter="addMessage"
+              />
             </div>
             <i class="icon fa-solid fa-microphone px-3"></i>
           </div>
